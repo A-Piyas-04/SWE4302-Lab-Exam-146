@@ -2,11 +2,13 @@ public class MintChocolateChip extends Flavor{
 
     @Override
     public String getName() {
-        return null;
+        return "Mint Chocolate Chip";
     }
 
     @Override
     public double getPricePPerScoop() {
-        return 0;
+        return 2.80;
     }
+
+
 }

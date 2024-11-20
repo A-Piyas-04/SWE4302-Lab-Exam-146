@@ -1,11 +1,11 @@
 public class PistachioDelight extends Flavor{
     @Override
     public String getName() {
-        return null;
+        return "Pistachio Delight";
     }
 
     @Override
     public double getPricePPerScoop() {
-        return 0;
+        return 3.25;
     }
 }

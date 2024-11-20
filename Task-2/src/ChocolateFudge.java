@@ -1,11 +1,11 @@
 public class ChocolateFudge extends Flavor{
     @Override
     public String getName() {
-        return null;
+        return "Chocolate Fudge";
     }
 
     @Override
     public double getPricePPerScoop() {
-        return 0;
+        return 3.00;
     }
 }
