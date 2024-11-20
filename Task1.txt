@@ -1,0 +1,8 @@
+InventorySystem :
+6 , Long Class , contains so many other modules,methods.
+11-35 , Primitive Obsession ,Uses int,double data-types
+41-42 , Long Parameter List , 7 parameters in a single method
+44-67 , Conditional Complexity , A lot uses of If statements
+78 , Switct cases
+80-93 , Magic Numbers , '.95' '.85' '/100' etc...
+132-167 , Long Method , Loops - If statements - object creation - etc... so many things in a single method
