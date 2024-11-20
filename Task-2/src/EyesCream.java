@@ -10,8 +10,8 @@ public class EyesCream {
         order.addItem(new OrderItem(new MintChocolateChip(), 1, Arrays.asList()));
 
 
-        System.out.println("Total: $" + String.format("%.2f", order.calculateTotal()));
 
+        order.getOrderDetails();
 
     }
 }

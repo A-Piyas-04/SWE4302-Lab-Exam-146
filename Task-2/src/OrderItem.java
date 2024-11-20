@@ -19,7 +19,7 @@ public class OrderItem {
         return total;
     }
 
-    public String getDescription() {
+    public String getInvoice() {
         StringBuilder description = new StringBuilder();
 
         description.append(flavor.getName())
