@@ -52,6 +52,17 @@ public class IceCreamShopTest {
         assertEquals(expectedTax, order.calculateTax(), 0.01);
     }
 
+    @Test
+    public void testContainerPricing() {
+        Order paperCupOrder = new Order(new PaperCup());
+        paperCupOrder.addItem(new OrderItem(new ChocolateFudge(), 1, Arrays.asList()));
+
+        Order waffleConeOrder = new Order(new WaffleCone());
+        waffleConeOrder.addItem(new OrderItem(new ChocolateFudge(), 1, Arrays.asList()));
+
+        assertEquals(0.00, paperCupOrder.calculateSubtotal() - (3.00), 0.01);
+        assertEquals(5.00, waffleConeOrder.calculateSubtotal() - (3.00), 0.01);
+    }
 
 
 }

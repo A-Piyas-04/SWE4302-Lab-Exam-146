@@ -33,15 +33,15 @@ public class Order {
     public List<String> getOrderDetails() {
         List<String> details = new ArrayList<>();
         for (OrderItem item : items) {
-            details.add(item.getInvoice());
+            details.add(item.getDescription());
         }
-        details.add("Subtotal: $" + String.format("%.2f", calculateSubtotal()));
-        details.add("Tax: $" + String.format("%.2f", calculateTax()));
-        details.add("Total Amount Due: $" + String.format("%.2f", calculateTotal()));
+        details.add("Subtotal         : $" + String.format("%.2f", calculateSubtotal()));
+        details.add("Tax              : $" + String.format("%.2f", calculateTax()));
+        details.add("Total Amount Due : $" + String.format("%.2f", calculateTotal()));
 
-        System.out.println("Subtotal: $" + String.format("%.2f", calculateSubtotal()));
-        System.out.println("Tax: $" + String.format("%.2f", calculateTax()));
-        System.out.println("Total Amount Due: $" + String.format("%.2f", calculateTotal()));
+        System.out.println("Subtotal         : $" + String.format("%.2f", calculateSubtotal()));
+        System.out.println("Tax              : $" + String.format("%.2f", calculateTax()));
+        System.out.println("Total Amount Due : $" + String.format("%.2f", calculateTotal()));
         return details;
     }
 }
