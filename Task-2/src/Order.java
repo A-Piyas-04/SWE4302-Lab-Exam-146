@@ -44,5 +44,6 @@ public class Order {
         System.out.println("Total Amount Due : $" + String.format("%.2f", calculateTotal()));
         return details;
     }
+
 }
 
