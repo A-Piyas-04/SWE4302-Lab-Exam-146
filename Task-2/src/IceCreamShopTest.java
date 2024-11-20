@@ -1,7 +1,12 @@
 import org.junit.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
+
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.Arrays;
+import java.util.List;
 
 
 public class IceCreamShopTest {
@@ -60,6 +65,29 @@ public class IceCreamShopTest {
         assertEquals(0.00, paperCupOrder.calculateSubtotal() - (3.00), 0.01);
         assertEquals(5.00, waffleConeOrder.calculateSubtotal() - (3.00), 0.01);
     }
+
+    @Test
+    public void testInvoiceGeneration() {
+        Order order = new Order(new PaperCup());
+        order.addItem(new OrderItem(new MintChocolateChip(), 1, Arrays.asList(new ChocolateChips())));
+        String fileName = "test_invoice.txt";
+
+        try {
+            InvoiceGenerator.generateInvoice(order, fileName);
+
+            // Verify the file content
+            List<String> lines = Files.readAllLines(Paths.get(fileName));
+            assertTrue(lines.contains("Mint Chocolate Chip - 1 scoop: $2.80"));
+            assertTrue(lines.contains("Chocolate Chips - 1 time: $0.50"));
+            assertTrue(lines.contains("Subtotal: $3.30"));
+            assertTrue(lines.stream().anyMatch(line -> line.startsWith("Tax")));
+            assertTrue(lines.stream().anyMatch(line -> line.startsWith("Total Amount Due")));
+        } catch (IOException e) {
+            fail("Invoice generation failed: " + e.getMessage());
+        }
+    }
+
+
 
 
 }

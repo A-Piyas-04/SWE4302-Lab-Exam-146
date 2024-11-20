@@ -11,12 +11,7 @@ public class EyesCream {
         order.addItem(new OrderItem(new MintChocolateChip(), 1, Arrays.asList()));
 
 
-//        try {
-//            InvoiceGenerator.generateInvoice(order, "invoice.txt");
-//            System.out.println("Invoice generated successfully.");
-//        } catch (IOException e) {
-//            System.out.println("Failed to generate invoice.");
-//        }
+        InvoiceGenerator.generateInvoice(order, "invoice.txt");
 
         order.getOrderDetails();
 
